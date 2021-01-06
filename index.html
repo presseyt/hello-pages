@@ -1,8 +1,20 @@
 <div>
   Writing some html
 </div>
+<div class="test"></div>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
   const a = 12;
   console.log("script is working", a + 1);
+  console.log($);
+  $(() => {
+    console.log(2);
+    $.get('/partial').then((result) => {
+      console.log('result', result);
+      $('.test').html(result);
+    });
+  });
+  console.log(1);
 </script>
